@@ -3,6 +3,7 @@ function NewRack() {
     return (
         <>
         <h1>Current Rack</h1>
+        <h2>Balls left on Table</h2>
         <table>
             <thead>
                 <tr>

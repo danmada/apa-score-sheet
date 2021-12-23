@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PlayerInfo from './PlayerInfo';
 import NewRack from './NewRack';
 import RunningTotal from './RunningTotal';
@@ -11,12 +11,22 @@ function App() {
   const [playerTwoSkill, setPlayerTwoSkill] = useState('')
   const ballCount = [14, 19, 25, 31, 38, 46, 55, 65, 75]
 
-  
+  const getData = async () => {
+    const response = await fetch("/api");
+    const data = await response.json();
+    console.log(data)
+  }
+
+
+  useEffect(() => {
+    getData();
+  }, [])
 
 
   return (
     <div className="App">
-      <PlayerInfo setPlayerOne={setPlayerOne} 
+      <PlayerInfo 
+                  setPlayerOne={setPlayerOne} 
                   playerOne={playerOne} 
                   setPlayerTwo={setPlayerTwo} 
                   playerTwo={playerTwo}
