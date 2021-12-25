@@ -1,4 +1,29 @@
-function NewRack() {
+function NewRack({  playerOneBallCount,
+                    playerTwoBallCount,
+                    setPlayerOneBallCount,
+                    setPlayerTwoBallCount,
+                    inningCount,
+                    setInningCount,
+                    deadBallCount,
+                    setDeadBallCount
+}) {
+
+    function handleP1BallCount(){
+        setPlayerOneBallCount(playerOneBallCount + 1)
+    }
+
+    function handleP2BallCount(){
+        setPlayerTwoBallCount(playerTwoBallCount + 1)
+    }
+
+    function handleInningCount(){
+        setInningCount(inningCount + 1)
+    }
+
+    function handleDeadBallCount(){
+        setDeadBallCount(deadBallCount + 1)
+    }
+
 
     return (
         <>
@@ -15,10 +40,10 @@ function NewRack() {
             </thead>
             <tbody>
                 <tr>
-                    <td>9</td>
-                    <td>6</td>
-                    <td>0</td>
-                    <td>1</td>
+                    <td onClick={handleP1BallCount}>{playerOneBallCount}</td>
+                    <td onClick={handleInningCount}>{inningCount}</td>
+                    <td onClick={handleDeadBallCount}>{deadBallCount}</td>
+                    <td onClick={handleP2BallCount}>{playerTwoBallCount}</td>
                 </tr>
             </tbody>
         </table>

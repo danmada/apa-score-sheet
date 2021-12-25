@@ -10,6 +10,10 @@ function App() {
   const [playerOneSkill, setPlayerOneSkill] = useState('')
   const [playerTwoSkill, setPlayerTwoSkill] = useState('')
   const ballCount = [14, 19, 25, 31, 38, 46, 55, 65, 75]
+  const [playerOneBallCount, setPlayerOneBallCount] = useState(0)
+  const [playerTwoBallCount, setPlayerTwoBallCount] = useState(0)
+  const [inningCount, setInningCount] = useState(0)
+  const [deadBallCount, setDeadBallCount] = useState(0)
 
   const getData = async () => {
     const response = await fetch("/api");
@@ -36,7 +40,16 @@ function App() {
                   setPlayerTwoSkill={setPlayerTwoSkill}
                   ballCount={ballCount}
                   />
-      <NewRack />
+      <NewRack 
+                  playerOneBallCount={playerOneBallCount}
+                  playerTwoBallCount={playerTwoBallCount}
+                  inningCount={inningCount}
+                  deadBallCount={deadBallCount}
+                  setPlayerOneBallCount={setPlayerOneBallCount}
+                  setPlayerTwoBallCount={setPlayerTwoBallCount}
+                  setInningCount={setInningCount}
+                  setDeadBallCount={setDeadBallCount}
+      />
       <RunningTotal />
     </div>
   );
