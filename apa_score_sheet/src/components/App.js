@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import PlayerInfo from './PlayerInfo';
 import NewRack from './NewRack';
 import RunningTotal from './RunningTotal';
@@ -16,18 +16,7 @@ function App() {
   const [deadBallCount, setDeadBallCount] = useState(0)
   const [completedInnings, setCompletedInnings] = useState([])
 
-  // const getData = async () => {
-  //   const response = await fetch("/api");
-  //   const data = await response.json();
-  //   console.log(data)
-  // }
-
-
-  // useEffect(() => {
-  //   getData();
-  // }, [])
-
-  const currentRack = [{playerOneBallCount},{inningCount}, {deadBallCount}, {playerTwoBallCount}]
+  const currentRack = {playerOneBallCount, inningCount, deadBallCount, playerTwoBallCount}
 
   function handleEndRackClick() {
     setCompletedInnings((completedInnings) => [...completedInnings, currentRack ])

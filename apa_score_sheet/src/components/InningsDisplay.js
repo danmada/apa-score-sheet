@@ -1,17 +1,19 @@
-function InningsDisplay({completedInnings}) {
+import React from "react"
+
+function InningsDisplay({data}) {
 
 
     return (
         <div>  
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+                    <td>{data.playerOneBallCount}</td>
+                    <td>{data.inningCount}</td>
+                    <td>{data.deadBallCount}</td>
+                    <td>{data.playerTwoBallCount}</td>
             </tr>
         </div>
     )
-    
+
 }
 
 export default InningsDisplay
