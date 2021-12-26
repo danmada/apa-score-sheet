@@ -1,3 +1,6 @@
+
+
+
 function NewRack({  playerOneBallCount,
                     playerTwoBallCount,
                     setPlayerOneBallCount,
@@ -5,8 +8,10 @@ function NewRack({  playerOneBallCount,
                     inningCount,
                     setInningCount,
                     deadBallCount,
-                    setDeadBallCount
+                    setDeadBallCount,
+                    handleEndRackClick
 }) {
+
 
     function handleP1BallCount(){
         setPlayerOneBallCount(playerOneBallCount + 1)
@@ -23,12 +28,11 @@ function NewRack({  playerOneBallCount,
     function handleDeadBallCount(){
         setDeadBallCount(deadBallCount + 1)
     }
-
+    
 
     return (
         <>
         <h1>Current Rack</h1>
-        <h2>Balls left on Table</h2>
         <table>
             <thead>
                 <tr>
@@ -47,7 +51,7 @@ function NewRack({  playerOneBallCount,
                 </tr>
             </tbody>
         </table>
-        <button>End Rack</button>
+        <button onClick={handleEndRackClick}>End Rack</button>
         </>
     )
 }

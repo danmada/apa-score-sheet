@@ -1,8 +1,19 @@
 import React, { useState } from "react"
 
-function PlayerInfo({ ballCount, playerOne, setPlayerOne, playerTwo, setPlayerTwo, setPlayerOneSkill, setPlayerTwoSkill, playerOneSkill, playerTwoSkill }) {
-   const [toggleSetInfo, setToggleSetInfo] = useState(true)
-   
+function PlayerInfo({ 
+                ballCount, 
+                playerOne, 
+                setPlayerOne, 
+                playerTwo, 
+                setPlayerTwo, 
+                setPlayerOneSkill, 
+                setPlayerTwoSkill, 
+                playerOneSkill, 
+                playerTwoSkill 
+        }) {
+
+const [toggleSetInfo, setToggleSetInfo] = useState(true)
+
 
 function handleSetButton() {
     setToggleSetInfo(!toggleSetInfo)

@@ -1,4 +1,10 @@
-function RunningTotal() {
+import InningsDisplay from "./InningsDisplay"
+
+function RunningTotal({completedInnings}) {
+
+
+
+
 
     return (
         <>
@@ -6,10 +12,10 @@ function RunningTotal() {
         <table>
             <thead>
             <tr>
-                <th>Ball Count</th>
+                <th>Player 1 Ball Count</th>
                 <th>Innings</th>
                 <th>Dead Balls</th>
-                <th>Ball Count</th>
+                <th>Player 1 Ball Count</th>
             </tr>
             </thead>
         </table>

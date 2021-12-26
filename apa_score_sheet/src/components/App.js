@@ -14,18 +14,26 @@ function App() {
   const [playerTwoBallCount, setPlayerTwoBallCount] = useState(0)
   const [inningCount, setInningCount] = useState(0)
   const [deadBallCount, setDeadBallCount] = useState(0)
+  const [completedInnings, setCompletedInnings] = useState([])
 
-  const getData = async () => {
-    const response = await fetch("/api");
-    const data = await response.json();
-    console.log(data)
+  // const getData = async () => {
+  //   const response = await fetch("/api");
+  //   const data = await response.json();
+  //   console.log(data)
+  // }
+
+
+  // useEffect(() => {
+  //   getData();
+  // }, [])
+
+  const currentRack = [{playerOneBallCount},{inningCount}, {deadBallCount}, {playerTwoBallCount}]
+
+  function handleEndRackClick() {
+    setCompletedInnings((completedInnings) => [...completedInnings, currentRack ])
   }
 
-
-  useEffect(() => {
-    getData();
-  }, [])
-
+  console.log(completedInnings)
 
   return (
     <div className="App">
@@ -49,8 +57,9 @@ function App() {
                   setPlayerTwoBallCount={setPlayerTwoBallCount}
                   setInningCount={setInningCount}
                   setDeadBallCount={setDeadBallCount}
+                  handleEndRackClick={handleEndRackClick}
       />
-      <RunningTotal />
+      <RunningTotal completedInnings={completedInnings}/>
     </div>
   );
 }
