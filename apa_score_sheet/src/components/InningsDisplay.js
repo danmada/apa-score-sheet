@@ -4,14 +4,16 @@ function InningsDisplay({data}) {
 
 
     return (
-        <div>  
+        
+            <tbody> 
             <tr>
                     <td>{data.playerOneBallCount}</td>
                     <td>{data.inningCount}</td>
                     <td>{data.deadBallCount}</td>
                     <td>{data.playerTwoBallCount}</td>
             </tr>
-        </div>
+            </tbody>
+    
     )
 
 }

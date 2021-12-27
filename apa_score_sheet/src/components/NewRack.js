@@ -12,23 +12,18 @@ function NewRack({  playerOneBallCount,
                     handleEndRackClick
 }) {
 
+   const handleAddP1BallCount = () => setPlayerOneBallCount(playerOneBallCount + 1);
+   const handleSubP1BallCount = () => setPlayerOneBallCount(playerOneBallCount - 1);
 
-    function handleP1BallCount(){
-        setPlayerOneBallCount(playerOneBallCount + 1)
-    }
+   const handleAddP2BallCount = () => setPlayerTwoBallCount(playerTwoBallCount + 1);
+   const handleSubP2BallCount = () => setPlayerTwoBallCount(playerTwoBallCount - 1);
 
-    function handleP2BallCount(){
-        setPlayerTwoBallCount(playerTwoBallCount + 1)
-    }
+   const handleInningAddCount = () => setInningCount(inningCount + 1);
+   const handleInningSubCount = () => setInningCount(inningCount - 1);
 
-    function handleInningCount(){
-        setInningCount(inningCount + 1)
-    }
+   const handleAddDeadBallCount = () => setDeadBallCount(deadBallCount + 1);
+   const handleSubDeadBallCount = () => setDeadBallCount(deadBallCount - 1);
 
-    function handleDeadBallCount(){
-        setDeadBallCount(deadBallCount + 1)
-    }
-    
 
     return (
         <>
@@ -44,10 +39,28 @@ function NewRack({  playerOneBallCount,
             </thead>
             <tbody>
                 <tr>
-                    <td onClick={handleP1BallCount}>{playerOneBallCount}</td>
-                    <td onClick={handleInningCount}>{inningCount}</td>
-                    <td onClick={handleDeadBallCount}>{deadBallCount}</td>
-                    <td onClick={handleP2BallCount}>{playerTwoBallCount}</td>
+                    <td>{playerOneBallCount}</td>
+                    <td>{inningCount}</td>
+                    <td>{deadBallCount}</td>
+                    <td>{playerTwoBallCount}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onClick={handleAddP1BallCount}>+</button>
+                        <button onClick={handleSubP1BallCount}>-</button>
+                    </td>
+                    <td>
+                        <button onClick={handleInningAddCount}>+</button>
+                        <button onClick={handleInningSubCount}>-</button>
+                    </td>
+                    <td>
+                        <button onClick={handleAddDeadBallCount}>+</button>
+                        <button onClick={handleSubDeadBallCount}>-</button>
+                    </td>
+                    <td>
+                        <button onClick={handleAddP2BallCount}>+</button>
+                        <button onClick={handleSubP2BallCount}>-</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

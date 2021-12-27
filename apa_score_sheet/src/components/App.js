@@ -19,10 +19,18 @@ function App() {
   const currentRack = {playerOneBallCount, inningCount, deadBallCount, playerTwoBallCount}
 
   function handleEndRackClick() {
+    if ((playerOneBallCount + playerTwoBallCount + deadBallCount) !== 10) {
+      alert('Total ball count needs to equal 10!')
+    } else {
     setCompletedInnings((completedInnings) => [...completedInnings, currentRack ])
+
+    setPlayerOneBallCount(0)
+    setPlayerTwoBallCount(0)
+    setInningCount(0)
+    setDeadBallCount(0)
+    }
   }
 
-  console.log(completedInnings)
 
   return (
     <div className="App">

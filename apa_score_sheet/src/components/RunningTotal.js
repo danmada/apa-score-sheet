@@ -19,8 +19,8 @@ function RunningTotal({completedInnings}) {
                 <th>Dead Balls</th>
                 <th>Player 1 Ball Count</th>
             </tr>
-            {innings}
             </thead>
+            {innings}
         </table>
         </>
     )
