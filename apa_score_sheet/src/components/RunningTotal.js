@@ -1,11 +1,11 @@
 import InningsDisplay from "./InningsDisplay"
+import CountTotals from "./CountTotals"
 
 function RunningTotal({completedInnings}) {
 
-    const innings = completedInnings.map((data) => {
-       return <InningsDisplay data={data}/>
+const innings = completedInnings.map((data) => {
+    return <InningsDisplay data={data}/>
     })
-
 
 
     return (
@@ -21,6 +21,7 @@ function RunningTotal({completedInnings}) {
             </tr>
             </thead>
             {innings}
+            <CountTotals completedInnings={completedInnings}/>
         </table>
         </>
     )
