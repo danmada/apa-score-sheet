@@ -56,7 +56,11 @@ function App() {
                   setDeadBallCount={setDeadBallCount}
                   handleEndRackClick={handleEndRackClick}
       />
-      <RunningTotal completedInnings={completedInnings}/>
+      <RunningTotal 
+                  completedInnings={completedInnings}
+                  playerOneSkill={playerOneSkill}
+                  playerTwoSkill={playerTwoSkill}
+      />
     </div>
   );
 }

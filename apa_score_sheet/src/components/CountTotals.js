@@ -1,4 +1,4 @@
-function CountTotals({completedInnings}) {
+function CountTotals({completedInnings, playerOneSkill, playerTwoSkill}) {
 
     let player1Total = 0;
     let player2Total = 0;

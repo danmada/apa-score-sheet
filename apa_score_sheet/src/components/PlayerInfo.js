@@ -47,6 +47,7 @@ function getBallCount(skill) {
                 />
                 <label htmlFor="skill-level">Skill Level: </label>
                     <select id="skill-level" name="skilllevel" onChange={(e) => setPlayerOneSkill(e.target.value)}>
+                    <option>SL</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -61,6 +62,7 @@ function getBallCount(skill) {
                 <input type="text" placeholder="Player 2 Name" value={playerTwo} onChange={(e) => setPlayerTwo(e.target.value)}/>
                 <label>Skill Level: </label>
                     <select id="skilllevel" name="skilllevel" onChange={(e) => setPlayerTwoSkill(e.target.value)}>
+                    <option>SL</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
