@@ -60,6 +60,9 @@ function App() {
                   completedInnings={completedInnings}
                   playerOneSkill={playerOneSkill}
                   playerTwoSkill={playerTwoSkill}
+                  playerOneBallCount={playerOneBallCount}
+                  playerTwoBallCount={playerTwoBallCount}
+                  ballCount={ballCount}
       />
     </div>
   );

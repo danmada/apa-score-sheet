@@ -1,7 +1,7 @@
 import InningsDisplay from "./InningsDisplay"
 import CountTotals from "./CountTotals"
 
-function RunningTotal({completedInnings, playerOneSkill, playerTwoSkill}) {
+function RunningTotal({completedInnings, ballCount, playerOneSkill, playerTwoSkill, playerOneBallCount, playerTwoBallCount}) {
 
 const innings = completedInnings.map((data) => {
     return <InningsDisplay data={data}/>
@@ -21,9 +21,16 @@ const innings = completedInnings.map((data) => {
             </tr>
             </thead>
             {innings}
-            <CountTotals completedInnings={completedInnings} playerOneSkill={playerOneSkill} playerTwoSkill={playerTwoSkill} />
+            <CountTotals 
+                    completedInnings={completedInnings} 
+                    playerOneSkill={playerOneSkill} 
+                    playerTwoSkill={playerTwoSkill}
+                    playerOneBallCount={playerOneBallCount}
+                    playerTwoBallCount={playerTwoBallCount}
+                    ballCount={ballCount} 
+            />
         </table>
         </>
     )
-}
+} 
 export default RunningTotal
