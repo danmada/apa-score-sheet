@@ -1,4 +1,4 @@
-
+import styled from "styled-components";
 
 
 function NewRack({  playerOneBallCount,
@@ -26,9 +26,9 @@ function NewRack({  playerOneBallCount,
 
 
     return (
-        <>
-        <h1>Current Rack</h1>
-        <table>
+        <MainDiv>
+        <Header>Current Rack</Header>
+        <SetTable>
             <thead>
                 <tr>
                     <th>Ball Count</th>
@@ -63,10 +63,22 @@ function NewRack({  playerOneBallCount,
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </SetTable>
         <button onClick={handleEndRackClick}>End Rack</button>
-        </>
+        </MainDiv>
     )
 }
 
 export default NewRack
+
+///// styled components 
+
+const MainDiv = styled.div`
+color: #2A2A72;
+`
+const SetTable = styled.table`
+padding-left: 30%;
+`
+const Header = styled.h1`
+background-color: #D1603D;
+`

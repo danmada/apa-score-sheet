@@ -1,5 +1,6 @@
 import InningsDisplay from "./InningsDisplay"
 import CountTotals from "./CountTotals"
+import styled from "styled-components";
 
 function RunningTotal({completedInnings, ballCount, playerOneSkill, playerTwoSkill, playerOneBallCount, playerTwoBallCount}) {
 
@@ -9,9 +10,9 @@ const innings = completedInnings.map((data) => {
 
 
     return (
-        <>
-        <h1>Running Total</h1>
-        <table>
+        <MainDiv>
+        <Header>Running Total</Header>
+        <SetTable>
             <thead>
             <tr>
                 <th>Player 1 Ball Count</th>
@@ -29,8 +30,20 @@ const innings = completedInnings.map((data) => {
                     playerTwoBallCount={playerTwoBallCount}
                     ballCount={ballCount} 
             />
-        </table>
-        </>
+        </SetTable>
+        </MainDiv>
     )
 } 
 export default RunningTotal
+
+//styled components
+
+const MainDiv = styled.div`
+color: #2A2A72;
+`
+const Header = styled.h1`
+background-color: #D1603D;
+`
+const SetTable = styled.table`
+padding-left: 30%;
+`

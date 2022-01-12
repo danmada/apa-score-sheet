@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import styled from "styled-components";
 
 function PlayerInfo({ 
                 ballCount, 
@@ -30,8 +31,8 @@ function getBallCount(skill) {
 
     
     return (
-        <>
-        <h1 data-testid="header">Player Info</h1>
+        <MainDiv>
+        <Header data-testid="header">Player Info</Header>
         { toggleSetInfo ?
         <div>
             <form>
@@ -77,15 +78,16 @@ function getBallCount(skill) {
             <button onClick={handleSetButton}>Set Player Info</button>
         </div>
             :
-        <table>
+        <SetTable>
             <thead>
                 <tr>
-                    <th>Player 1</th>
-                    <th>Skill Level</th>
-                    <th>Ball Count</th>
-                    <th>Player 2</th>
-                    <th>Skill Level</th>
-                    <th>Ball Count</th>
+                    <SetTableHead>Player 1</SetTableHead>
+                    <SetTableHead>Skill Level</SetTableHead>
+                    <SetTableHead>Ball Count</SetTableHead>
+                    <SetTableHead>Ball Count</SetTableHead>
+                    <SetTableHead>Skill Level</SetTableHead>
+                    <SetTableHead>Player 2</SetTableHead>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -93,15 +95,34 @@ function getBallCount(skill) {
                     <td>{playerOne}</td>
                     <td>{playerOneSkill}</td>
                     <td>{getBallCount({playerOneSkill})}</td>
-                    <td>{playerTwo}</td>
-                    <td>{playerTwoSkill}</td>
                     <td>{getBallCount({playerTwoSkill})}</td>
+                    <td>{playerTwoSkill}</td>
+                    <td>{playerTwo}</td>
                 </tr>
             </tbody>
-        </table>
+        </SetTable>
         }
-        </>
+        </MainDiv>
     )
 }
 
 export default PlayerInfo
+
+//styled components
+
+const MainDiv = styled.div`
+color: #2A2A72;
+`
+
+const SetTable = styled.table`
+padding-left: 25%;
+`
+
+const SetTableHead = styled.th`
+padding: 0px 20px; 
+background-color: #D1603D;
+`
+
+const Header = styled.h1`
+background-color: #D1603D;
+`
