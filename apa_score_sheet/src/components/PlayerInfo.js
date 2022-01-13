@@ -81,25 +81,22 @@ function getBallCount(skill) {
         <SetTable>
             <thead>
                 <tr>
-                    <SetTableHead>Player 1</SetTableHead>
+                    <SetTableHead>Players</SetTableHead>
                     <SetTableHead>Skill Level</SetTableHead>
                     <SetTableHead>Ball Count</SetTableHead>
-                    <SetTableHead>Ball Count</SetTableHead>
-                    <SetTableHead>Skill Level</SetTableHead>
-                    <SetTableHead>Player 2</SetTableHead>
-                    
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <td>{playerOne}</td>
                     <td>{playerOneSkill}</td>
                     <td>{getBallCount({playerOneSkill})}</td>
-                    <td>{getBallCount({playerTwoSkill})}</td>
-                    <td>{playerTwoSkill}</td>
-                    <td>{playerTwo}</td>
                 </tr>
-            </tbody>
+                <tr>
+                    <td>{playerTwo}</td>
+                    <td>{playerTwoSkill}</td>
+                    <td>{getBallCount({playerTwoSkill})}</td>
+                </tr>
+                
+            </thead>
         </SetTable>
         }
         </MainDiv>
@@ -115,12 +112,11 @@ color: #2A2A72;
 `
 
 const SetTable = styled.table`
-padding-left: 25%;
+padding-left: 10%;
 `
 
 const SetTableHead = styled.th`
 padding: 0px 20px; 
-background-color: #D1603D;
 `
 
 const Header = styled.h1`

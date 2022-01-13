@@ -77,8 +77,11 @@ const MainDiv = styled.div`
 color: #2A2A72;
 `
 const SetTable = styled.table`
-padding-left: 30%;
+padding-left: 10%;
 `
 const Header = styled.h1`
 background-color: #D1603D;
+`
+const DataCell = styled.td`
+padding-right: 5pt;
 `

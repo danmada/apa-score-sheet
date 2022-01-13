@@ -13,14 +13,14 @@ const innings = completedInnings.map((data) => {
         <MainDiv>
         <Header>Running Total</Header>
         <SetTable>
-            <thead>
+            <TableHead>
             <tr>
                 <th>Player 1 Ball Count</th>
                 <th>Innings</th>
                 <th>Dead Balls</th>
                 <th>Player 2 Ball Count</th>
             </tr>
-            </thead>
+            </TableHead>
             {innings}
             <CountTotals 
                     completedInnings={completedInnings} 
@@ -45,5 +45,8 @@ const Header = styled.h1`
 background-color: #D1603D;
 `
 const SetTable = styled.table`
-padding-left: 30%;
+padding-left: 10%;
+`
+const TableHead = styled.thead`
+border-bottom: 5px solid red;
 `
