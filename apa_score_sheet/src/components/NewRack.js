@@ -82,6 +82,3 @@ padding-left: 10%;
 const Header = styled.h1`
 background-color: #D1603D;
 `
-const DataCell = styled.td`
-padding-right: 5pt;
-`
